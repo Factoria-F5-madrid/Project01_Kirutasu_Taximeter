@@ -2,7 +2,7 @@ import time
 
 def calculating_fare(seconds_stopped, seconds_moving):
     """
-    Calcular la tarifa total en euros.
+    Este metodo/funcion calcula la tarifa total en euros.
     - Stopped: 0.02 €/s
     - Moving: 0.05 €/s
     """
@@ -17,26 +17,27 @@ def taximeter():
     print("Welcome to the first project for F5 students: The Taximeter!")
     print("Please, choose one of the next available actions:\n'start', 'stop', 'move', 'finish', 'exit'\n")
 
-    trip_is_active = False #Ningun viaje en marcha
+    trip_is_active = False # Ningun viaje en marcha
     start_time = 0
-    stopped_time = 0
-    moving_time = 0
+    stopped_time = 0 # Reset tiempo detenido
+    moving_time = 0 # Reset tiempo en movimiento
     state = None  # 'stopped' o 'moving'
     state_start_time = 0
 
     while True:
-        command = input("Type here your command: > ").strip().lower()
+        command = input("Type here your command: > ").strip().lower() # Nos aseguramos que el string sea sin espacios y
+        # en lowercase, para poder gestionarlo
 
         if command == "start":
             if trip_is_active:
                 print("Error: A trip is already in progress and cannot start again at this moment.")
                 continue
-            trip_is_active = True #El viaje ha comenzado
+            trip_is_active = True # El viaje ha comenzado
             start_time = time.time()
             stopped_time = 0
             moving_time = 0
             state = 'stopped'  # Iniciamos en estado 'stopped'
-            state_start_time = time.time() #Arranca el contador del total del viaje
+            state_start_time = time.time() # Arranca el contador del total del viaje
             print("Trip started. Initial state: 'stopped'.")
 
         elif command in ("stop", "move"):
@@ -44,11 +45,11 @@ def taximeter():
                 print("Error: No active trip. Please start first.")
                 continue
             # Calcula el tiempo del estado anterior
-            duration = time.time() - state_start_time
+            duration = time.time() - state_start_time # Resta el tiempo total menos el tiempo en el estado anterior (por tanto duracion es en movimiento o en parado)
             if state == 'stopped':
-                stopped_time += duration
+                stopped_time += duration # Suma la duracion al tiempo detenido total
             else:
-                moving_time += duration
+                moving_time += duration # Suma la duracion al tiempo en movimiento total
 
             # Cambia el estado
             state = 'stopped' if command == "stop" else 'moving'
@@ -80,7 +81,7 @@ def taximeter():
 
         elif command == "exit":
             print("Exiting the program. Goodbye!")
-            break
+            break # detiene el bucle while, aunque se podría usar una flag para hacerla false sin "romperlo"
 
         else:
             print("Unknown command. Use: start, stop, move, finish, or exit.")
