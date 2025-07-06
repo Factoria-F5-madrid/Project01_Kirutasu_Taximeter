@@ -87,9 +87,12 @@ Esta función calcula la tarifa total en euros basada en el tiempo detenido y el
 
 ## 🎯 Objetivos de este proyecto
 
-- Iniciarse en la programación de una aplicación funcional en **Python**.
-- Practicar la estructura y modularización de código.
-- Familiarizarse con el uso de **Git** y **GitHub** desde el inicio del desarrollo.
-- Adoptar buenas prácticas de control de versiones, incluyendo:
-  - Uso de ramas (opcionalmente)
+- Iniciarse en la programación con una aplicación funcional en **Python**.
+- Practicar la estructura, sintaxis y entendimiento de código.
+- Uso de **Git** y **GitHub** con el objetivo de seguir familiarizandose con el workflow estandar.
+- Adoptar buenas prácticas:
+  - Comentar el codigo para un mejor entendimiento (propio y ajeno
+  - Crear un primer README decente, para habituarse a utilizar documentacion
   - Convenciones para mensajes de `commit` (como `feat:`, `fix:`, `docs:`, `refactor:`)
+  - Incorporar metodologias Agile al dia a dia.
+  - Probar test unitarios si no se está habituado a ello
