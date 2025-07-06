@@ -1,5 +1,5 @@
 import unittest
-from taximeter import calculating_fare  # importamos de la clase principal el metodo calculating_fare
+from taximeter.calculatingFare import calculating_fare  # importamos de la clase principal el metodo calculating_fare
 
 class TestCalculatingFare(unittest.TestCase):
 
