@@ -1,5 +1,7 @@
 import time
 
+from taximeter.calculatingFare import calculating_fare
+
 
 def taximeter():
     """
